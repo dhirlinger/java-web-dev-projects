@@ -14,34 +14,42 @@ public class Student {
                 this.gpa = gpa;
         }
         public String getName(){
-                return name;
+
+            return name;
         }
 
         public void setName(String aName){
-                this.name = aName;
+
+            this.name = aName;
         }
 
         public int getStudentId(){
-                return studentId;
+
+            return studentId;
         }
 
        private void setStudentId(int aStudentId){
-                this.studentId = aStudentId;
+
+            this.studentId = aStudentId;
        }
 
        public int getNumberOfCredits(){
-                return numberOfCredits;
+
+            return numberOfCredits;
        }
 
        private void setNumberOfCredits(int aNumberOfCredits){
-                this.numberOfCredits = aNumberOfCredits;
+
+            this.numberOfCredits = aNumberOfCredits;
        }
 
        public double getGpa() {
-               return gpa;
+
+            return gpa;
        }
 
        private void setGpa(double aGpa) {
-               this.gpa = aGpa;
+
+            this.gpa = aGpa;
        }
 }
