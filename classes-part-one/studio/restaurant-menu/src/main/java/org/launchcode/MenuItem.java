@@ -1,20 +1,22 @@
 package org.launchcode;
 
-import java.util.Date;
+import java.time.LocalDate;
+
+
 
 public class MenuItem {
     private String name;
     private double price;
     private String description;
     private String category;
-    private Date date;
+    private LocalDate dateAdded;
 
-    public MenuItem(String name, double price, String description, String category, Date date) {
+    public MenuItem(String name, double price, String description, String category) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.date = date;
+        this.dateAdded = LocalDate.now();
     }
 
     public String getName() {
@@ -49,11 +51,11 @@ public class MenuItem {
         this.category = category;
     }
 
-    public Date getDate() {
-        return date;
+    public LocalDate getDateAdded() {
+        return dateAdded;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDateAdded(LocalDate dateAdded) {
+        this.dateAdded = dateAdded;
     }
 }
