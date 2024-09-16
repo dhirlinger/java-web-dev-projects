@@ -9,14 +9,16 @@ public class MenuItem {
     private double price;
     private String description;
     private String category;
-    private LocalDate dateAdded;
+    //private LocalDate dateAdded;
+    private boolean isNew;
 
     public MenuItem(String name, double price, String description, String category) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.dateAdded = LocalDate.now();
+        this.isNew = true;
+        //this.dateAdded = LocalDate.now();
     }
 
     public String getName() {
@@ -51,11 +53,19 @@ public class MenuItem {
         this.category = category;
     }
 
-    public LocalDate getDateAdded() {
+    public boolean isNew() {
+        return isNew;
+    }
+
+    public void setNew(boolean aNew) {
+        isNew = aNew;
+    }
+
+    /*public LocalDate getDateAdded() {
         return dateAdded;
     }
 
     public void setDateAdded(LocalDate dateAdded) {
         this.dateAdded = dateAdded;
-    }
+    }*/
 }

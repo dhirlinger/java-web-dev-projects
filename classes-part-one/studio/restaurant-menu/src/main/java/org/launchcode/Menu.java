@@ -10,4 +10,13 @@ public class Menu {
     public ArrayList<MenuItem> getItemList() {
         return itemList;
     }
+
+    public void addMenuItem(MenuItem item){
+        itemList.add(item);
+    }
+
+    public void removeItem(MenuItem item){
+        itemList.remove(item);
+    }
+
 }
