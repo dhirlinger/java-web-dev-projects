@@ -21,19 +21,25 @@ public class Main {
         menu1.addMenuItem(item1);
         menu1.addMenuItem(item2);
         menu1.addMenuItem(item3);
+        menu1.addMenuItem(item1);
 
         //test print items
 
-        System.out.println("\nCurrent Menu Items: ");
-        for (MenuItem item : menu1.getItemList()) {
-            System.out.println("\n" + item.getName() + "\n" + item.getCategory() + "\n" +
-                    item.getDescription() + "\n" + item.getPrice());
-        }
+
+        System.out.println(menu1.toString());
+        System.out.println(item1.toString());
+        System.out.println("\nremoving one item...\n**********");
+        menu1.removeItem(item3);
+        System.out.println(menu1.toString());
 
 
-        String someDate = LocalDate.now().toString().substring(8, 10);
-        System.out.println(someDate);
+        /*String someDate = LocalDate.now().toString().substring(8, 10);
+        System.out.println(someDate);*/
     }
+
+
+
+
 
 
 }

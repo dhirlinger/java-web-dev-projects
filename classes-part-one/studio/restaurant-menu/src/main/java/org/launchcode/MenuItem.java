@@ -1,7 +1,7 @@
 package org.launchcode;
 
 import java.time.LocalDate;
-
+import java.util.Objects;
 
 
 public class MenuItem {
@@ -53,12 +53,34 @@ public class MenuItem {
         this.category = category;
     }
 
-    public boolean isNew() {
-        return isNew;
+    public String isNew() {
+        if (isNew) {
+            return "NEW";
+        }
+        else {return ""; }
     }
 
     public void setNew(boolean aNew) {
         isNew = aNew;
+    }
+
+    @Override
+    public String toString(){
+        return "\n" + getName() + "\n" + getCategory() + "\n" +
+                getDescription() + "\n" + getPrice() + " " + isNew();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        MenuItem menuItem = (MenuItem) o;
+        return Objects.equals(getName(), menuItem.getName()) && Objects.equals(getCategory(), menuItem.getCategory());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getCategory());
     }
 
     /*public LocalDate getDateAdded() {
