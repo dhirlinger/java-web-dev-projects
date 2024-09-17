@@ -1,6 +1,7 @@
 package org.launchcode;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.Objects;
 
 
@@ -9,7 +10,7 @@ public class MenuItem {
     private double price;
     private String description;
     private String category;
-    //private LocalDate dateAdded;
+    private LocalDate dateAdded;
     private boolean isNew;
 
     public MenuItem(String name, double price, String description, String category) {
@@ -18,7 +19,7 @@ public class MenuItem {
         this.description = description;
         this.category = category;
         this.isNew = true;
-        //this.dateAdded = LocalDate.now();
+        this.dateAdded = LocalDate.now();
     }
 
     public String getName() {
@@ -53,8 +54,14 @@ public class MenuItem {
         this.category = category;
     }
 
+    public LocalDate getDateAdded() {
+        return dateAdded;
+    }
+
     public String isNew() {
-        if (isNew) {
+        LocalDate today = LocalDate.now();
+        double daysBetween = getDateAdded().until(today, ChronoUnit.DAYS);
+        if (daysBetween < 90) {
             return "NEW";
         }
         else {return ""; }
